@@ -1,0 +1,479 @@
+# 这是一个示例 Python 脚本。
+
+# 按 Shift+F10 执行或将其替换为您的代码。
+# 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
+# 导入所需要的包
+import numpy as np
+def print_hi(name):
+    # 在下面的代码行中使用断点来调试脚本。
+    print(f'Hi, {name}')  # 按 Ctrl+F8 切换断点。
+
+
+# 按间距中的绿色按钮以运行脚本。
+if __name__ == '__main__':
+    print_hi('PyCharm')
+    # numpy的属性
+    array = np.array([[1,2,3],[1,2,3]])
+    print(array)
+    # 矩阵的维度
+    print(array.ndim)
+    # 矩阵的行数和列数
+    print(array.shape)
+    # 矩阵的大小
+    print(array.size)
+
+# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+
+运行结果：
+Hi, PyCharm
+[[1 2 3]
+ [1 2 3]]
+2
+(2, 3)
+6
+
+
+if __name__ == '__main__':
+    print_hi('PyCharm')
+    # 定义数组
+    # dtype定义数组元素的类型
+#     dtype写int会导致DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+# Deprecated in NumPy 1.20; for more details and guidance错误
+#     原因是因为原因在于np.int在numpy1.20已经被废弃掉了，故该改为 np.int_
+#     一维数组
+    a = np.array([2,23,4],dtype=np.int_)
+    print(a)
+    print(a.dtype)
+    # 二维数组
+    b = np.array([[1,2,3],[2,3,4]])
+    print(b)
+    # 全为0的二维数组，(3,4)定义了数组的行列
+    c = np.zeros((3,4))
+    print(c)
+    # 全为1的二维数组，(3,4)定义了数组的行列
+    d = np.ones((3,4))
+    print(d)
+    # 全为null的二维数组，(3,4)定义了数组的行列
+    e = np.empty((3,4))
+    print(e)
+    # 有序的二维数组，(3,4)定义了数组的行列
+    # reshape用于调整数组的大小
+    f = np.arange(12).reshape((3,4))
+    print(f)
+    # 有序的二维数组，(2,3)定义了数组的行列
+    # linspace选取1-10之间的间隔相等的6个数字，并顺序排列得到新的数组
+    g = np.linspace(1,10,6).reshape((2,3))
+    print(g)
+
+运行结果：
+Hi, PyCharm
+[ 2 23  4]
+int32
+[[1 2 3]
+ [2 3 4]]
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+[[1. 1. 1. 1.]
+ [1. 1. 1. 1.]
+ [1. 1. 1. 1.]]
+[[1. 1. 1. 1.]
+ [1. 1. 1. 1.]
+ [1. 1. 1. 1.]]
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+[[ 1.   2.8  4.6]
+ [ 6.4  8.2 10. ]]
+
+
+ if __name__ == '__main__':
+    print_hi('PyCharm')
+    a = np.array([10,20,30,40])
+    b = np.arange(4)
+    c = a - b
+    print(c)
+    d = a + b
+    print(d)
+    e = a * b
+    print(e)
+    # a*a
+    e = a ** 2
+    print(e)
+    # 10*sin q
+    f = 10 * np.sin(a)
+    print(f)
+    print(b<3)
+
+
+    g = np.array([[1,1],[2,3]])
+    h = np.arange(1,5).reshape((2,2))
+    print(g,h)
+    # 逐个相乘
+    i = g * h
+    print(i)
+    # 矩阵运算
+    # j = np.dot(g,h)
+    # 另外一种描述形式
+    j = g.dot(h)
+    print(j)
+
+
+    # 随机生成的数字
+    k = np.random.random((2,4))
+    print(k)
+    # 求和
+    l = np.sum(k)
+    print(l)
+    # 求最小值
+    m = np.min(k)
+    print(m)
+    # 求最大值
+    n = np.max(k)
+    print(n)
+    # 选择某个维度进行求和
+    # o = np.min(k,axis=1)
+    # print(o)
+    print(np.min(k,axis=1))
+
+ 运行结果：
+ Hi, PyCharm
+[10 19 28 37]
+[10 21 32 43]
+[  0  20  60 120]
+[ 100  400  900 1600]
+[-5.44021111  9.12945251 -9.88031624  7.4511316 ]
+[ True  True  True False]
+[[1 1]
+ [2 3]] [[1 2]
+ [3 4]]
+[[ 1  2]
+ [ 6 12]]
+[[ 4  6]
+ [11 16]]
+[[0.98084973 0.43316242 0.39083731 0.56020068]
+ [0.03862947 0.01964753 0.33215749 0.41866511]]
+3.1741497502219396
+0.01964753106049344
+0.9808497320125097
+[0.39083731 0.01964753]
+[0.39083731 0.01964753]
+
+
+
+if __name__ == '__main__':
+    print_hi('PyCharm')
+    a = np.arange(2,14).reshape((3,4))
+    print(a)
+    # a的最小值索引
+    b = np.argmin(a)
+    print(b)
+    c = np.argmax(a)
+    print(c)
+    # 平均值
+    # d = np.mean(a)
+    d = np.average(a)
+    print(d)
+    # 中位数
+    e = np.median(a)
+    print(e)
+    # 逐步累加
+    f = np.cumsum(a)
+    print(f)
+    # 逐步累差
+    g = np.diff(a)
+    print(g)
+    # 非零数值
+    h = np.nonzero(a)
+    print(h)
+    # 逐行排序
+    i = np.sort(a)
+    print(i)
+    # 矩阵反向
+    j = np.transpose(a)
+    print(j)
+    k = (a.T).dot(a)
+    print(k)
+    l = np.clip(a,3,9)
+    print(l)
+    m = np.mean(a,axis=0)
+    print(m)
+
+运行结果：
+Hi, PyCharm
+[[ 2  3  4  5]
+ [ 6  7  8  9]
+ [10 11 12 13]]
+0
+11
+7.5
+7.5
+[ 2  5  9 14 20 27 35 44 54 65 77 90]
+[[1 1 1]
+ [1 1 1]
+ [1 1 1]]
+(array([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2], dtype=int64), array([0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3], dtype=int64))
+[[ 2  3  4  5]
+ [ 6  7  8  9]
+ [10 11 12 13]]
+[[ 2  6 10]
+ [ 3  7 11]
+ [ 4  8 12]
+ [ 5  9 13]]
+[[140 158 176 194]
+ [158 179 200 221]
+ [176 200 224 248]
+ [194 221 248 275]]
+[[3 3 4 5]
+ [6 7 8 9]
+ [9 9 9 9]]
+[6. 7. 8. 9.]
+
+
+
+# 按间距中的绿色按钮以运行脚本。
+if __name__ == '__main__':
+    print_hi('PyCharm')
+    a = np.arange(3,15)
+    print(a)
+    print(a[3])
+    b = np.arange(3, 15).reshape((3,4))
+    print(b)
+    print(b[2])
+    # print(b[1][2])
+    # 另外一种写法
+    print(b[1,2])
+
+    # 第三列的所有数
+    print(b[:,2])
+    # 迭代行
+    for row in b:
+        print(row)
+    # 迭代列，但是由于没有这个功能，故将原矩阵反转，在迭代反转矩阵的行即可
+    for col in b.T:
+        print(col)
+
+    # 将数组的元素平展开得到一个一维数组
+    print(b.flatten())
+    # 遍历一维数组，输出每一个项的值
+    for item in b.flat:
+        print(item)
+
+运行结果：
+Hi, PyCharm
+[ 3  4  5  6  7  8  9 10 11 12 13 14]
+6
+[[ 3  4  5  6]
+ [ 7  8  9 10]
+ [11 12 13 14]]
+[11 12 13 14]
+9
+[ 5  9 13]
+[3 4 5 6]
+[ 7  8  9 10]
+[11 12 13 14]
+[ 3  7 11]
+[ 4  8 12]
+[ 5  9 13]
+[ 6 10 14]
+[ 3  4  5  6  7  8  9 10 11 12 13 14]
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+
+
+
+if __name__ == '__main__':
+    print_hi('PyCharm')
+    a = np.array([1,1,1])
+    b = np.array([2,2,2])
+
+    # 上下合并
+    # 实现将a,b合并为一个2行3列的二维数组
+    print(np.vstack((a,b)))
+
+    c = np.vstack((a,b))
+    print(a.shape,b.shape,c.shape)
+
+    # 左右合并
+    print(np.hstack((a,b)))
+
+    d = np.hstack((a, b))
+    print(a.shape, b.shape, d.shape)
+    # 在行上添加了一个维度
+    print(a[np.newaxis,:])
+
+    print(a[:,np.newaxis])
+
+    a = a[:,np.newaxis]
+    b = b[:,np.newaxis]
+    e = np.vstack((a,b))
+    print(e)
+
+    print("\n")
+    f = np.hstack((a,b))
+    print(f)
+
+    # 多个数组的合并
+    g = np.concatenate((a,b,b,a))
+    print(g)
+    # 可以指定某一个维度进行合并
+    # axis = 1表示横向合并
+    h = np.concatenate((a, b, b, a),axis=1)
+    print(h)
+    # axis = 0表示纵向合并
+    i = np.concatenate((a, b, b, a), axis=0)
+    print(i)
+
+
+运行结果：
+Hi, PyCharm
+[[1 1 1]
+ [2 2 2]]
+(3,) (3,) (2, 3)
+[1 1 1 2 2 2]
+(3,) (3,) (6,)
+[[1 1 1]]
+[[1]
+ [1]
+ [1]]
+[[1]
+ [1]
+ [1]
+ [2]
+ [2]
+ [2]]
+
+
+[[1 2]
+ [1 2]
+ [1 2]]
+[[1]
+ [1]
+ [1]
+ [2]
+ [2]
+ [2]
+ [2]
+ [2]
+ [2]
+ [1]
+ [1]
+ [1]]
+[[1 2 2 1]
+ [1 2 2 1]
+ [1 2 2 1]]
+[[1]
+ [1]
+ [1]
+ [2]
+ [2]
+ [2]
+ [2]
+ [2]
+ [2]
+ [1]
+ [1]
+ [1]]
+
+
+
+ if __name__ == '__main__':
+    print_hi('PyCharm')
+    a = np.arange(12).reshape((3,4))
+    print(a)
+
+
+    # 等大小分割
+    # 对列进行分割
+    print(np.split(a,2,axis=1))
+    # 对行进行分割
+    print(np.split(a,3,axis=0))
+
+    # 不等大小分割
+    print(np.array_split(a,3,axis=1))
+    # 纵向分割，即按行分割
+    print(np.vsplit(a,3))
+    # 横向分割，即按列分割
+    print(np.hsplit(a,2))
+
+
+ 运行结果：
+ Hi, PyCharm
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+[array([[0, 1],
+       [4, 5],
+       [8, 9]]), array([[ 2,  3],
+       [ 6,  7],
+       [10, 11]])]
+[array([[0, 1, 2, 3]]), array([[4, 5, 6, 7]]), array([[ 8,  9, 10, 11]])]
+[array([[0, 1],
+       [4, 5],
+       [8, 9]]), array([[ 2],
+       [ 6],
+       [10]]), array([[ 3],
+       [ 7],
+       [11]])]
+[array([[0, 1, 2, 3]]), array([[4, 5, 6, 7]]), array([[ 8,  9, 10, 11]])]
+[array([[0, 1],
+       [4, 5],
+       [8, 9]]), array([[ 2,  3],
+       [ 6,  7],
+       [10, 11]])]
+
+
+
+
+
+
+if __name__ == '__main__':
+    print_hi('PyCharm')
+    a = np.arange(4)
+    b = a
+    c = a
+    d = b
+    a[0] = 11
+    print(a)
+    # b is a判断是否与a相等
+    print(b is a)
+    print(c is a)
+    print(d is a)
+
+    # a与d关联
+    # d变其他也变
+    d[1:3] = [22,33]
+    print(d)
+    print(d is a)
+    print(c is a)
+    print(b is a)
+    print(a)
+
+    # a与d不关联
+    # deep copy
+    d = a.copy()
+    a[3] = 14
+    print(d is a)
+
+运行结果：
+Hi, PyCharm
+[11  1  2  3]
+True
+True
+True
+[11 22 33  3]
+True
+True
+True
+[11 22 33  3]
+False
