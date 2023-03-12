@@ -1,21 +1,21 @@
 import openpyxl
-import os
-import csv
 import pandas as pd
+import csv
+
 
 # 确定文件数据所在根目录
 src_path = "../data"
 # 确定文件保存的新目录
 save_src_path = "../cleanedData"
+# 转化为CSV文件保存的新目录
 save_csv_path = "../csv_cleanedata"
-
-def xlsxTocsv(save_src_path,save_path,ExperimentalResults_name,save_csv_path,ExperimentalResults_name_csv):
+def xlsxTocsv(save_src_path,save_path,FinalGrade_name,save_csv_path,FinalGrade_name_csv):
     # 文件所处的原目录完整路径
-    allPath = save_src_path + save_path + ExperimentalResults_name
+    allPath = save_src_path + save_path + FinalGrade_name
     print(allPath)
     # 打开文件
     workbook = openpyxl.load_workbook(allPath)
-    new_wholePath = save_csv_path + save_path + ExperimentalResults_name_csv
+    new_wholePath = save_csv_path + save_path + FinalGrade_name_csv
     # 确定要更改的sheet目录
     sheet = workbook.active
     # csv_data = []
@@ -46,10 +46,9 @@ def xlsxTocsv(save_src_path,save_path,ExperimentalResults_name,save_csv_path,Exp
     pd_reader = pd.read_csv(new_wholePath)
     print(pd_reader)
 
-
-def openFile(src_path,ExperimentalResults_path,ExperimentalResults_name,save_src_path,save_path,ExperimentalResults_name_csv):
+def openFile(src_path,FinalGrade_path,FinalGrade_name,save_src_path,save_path,FinalGrade_name_csv):
     # 获取查重文件的完整路径
-    wholePath = src_path + ExperimentalResults_path + ExperimentalResults_name;
+    wholePath = src_path + FinalGrade_path + FinalGrade_name;
     print("完整路径为："+wholePath)
     # 使用openpyxl加载文件
     file = openpyxl.load_workbook(wholePath)
@@ -66,37 +65,36 @@ def openFile(src_path,ExperimentalResults_path,ExperimentalResults_name,save_src
     # 获取该文件中的最大行数
     file_rows_max_nums = file_act.max_row
     # 起始行，由于存在3行表头，故为3
-    row_n = 4
-    # 目标列，为第一列，主要为了取出多余数据
-    col_n = 1
-    i = 3
-    while i < file_rows_max_nums:
-        if file_act.cell(row=row_n,column=col_n).value != '21级12班':
-            file_act.delete_rows(row_n)
-            print("已删除第"+str(row_n)+"行")
-        else:
-            row_n += 1
-        i += 1
-    save_name = save_src_path + save_path + ExperimentalResults_name
+    # row_n = 5
+    # # 目标列，为第一列，主要为了取出多余数据
+    # col_n = 1
+    # i = 3
+    # while i < file_rows_max_nums:
+    #     if file_act.cell(row=row_n,column=col_n).value != '21级12班':
+    #         file_act.delete_rows(row_n)
+    #         print("已删除第"+str(row_n)+"行")
+    #     else:
+    #         row_n += 1
+    #     i += 1
+    save_name = save_src_path + save_path + FinalGrade_name
     print(save_name)
     file.save(save_name)
-    print("已成功保存"+ExperimentalResults_name)
+    print("已成功保存"+FinalGrade_name)
     # 将xlsx文件转换为CSV文件，以便后续导入数据库文件
-    xlsxTocsv(save_src_path,save_path,ExperimentalResults_name,save_csv_path,ExperimentalResults_name_csv)
-
+    xlsxTocsv(save_src_path,save_path,FinalGrade_name,save_csv_path,FinalGrade_name_csv)
 
 # 进行实验查重文件的清洗过程
 # 确定实验查重文件所在的目录
-ExperimentalResults_path = "/实验成绩"
+FinalGrade_path = "/期末成绩"
 # 要保存的路径
-save_path = "/ExperimentalResults"
+save_path = "/FinalGrade"
 
 # 确定文件名称，并访问打开文件从而进行数据清洗
-for i in range(1,7):
+for i in range(1,2):
     # 要查重文件的名称
-    ExperimentalResults_name = "/21级12班《数据结构与算法》第"+str(i)+"次实验课_成绩单"+".xlsx"
-    ExperimentalResults_name_csv = "/21级12班《数据结构与算法》第"+str(i)+"次实验课_成绩单"+".csv"
+    FinalGrade_name = "/2021级软件工程专业《数据结构与算法》期末考试-成绩单.xlsx"
+    FinalGrade_name_csv = "/2021级软件工程专业《数据结构与算法》期末考试-成绩单.csv"
     # 打印要查重文件的名称
-    print(ExperimentalResults_name)
+    print(FinalGrade_name)
     # 从系统中根据文件目录打开文件
-    openFile(src_path,ExperimentalResults_path,ExperimentalResults_name,save_src_path,save_path,ExperimentalResults_name_csv)
+    openFile(src_path,FinalGrade_path,FinalGrade_name,save_src_path,save_path,FinalGrade_name_csv)

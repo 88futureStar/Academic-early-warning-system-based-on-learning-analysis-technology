@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="\csv_cleanedata\ExperimentalCheck\21级12班《数据结构与算法》第1次实验课_查重结果.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\ExperimentalCheck\21级12班《数据结构与算法》第2次实验课_查重结果.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\ExperimentalResults\21级12班《数据结构与算法》第1次实验课_成绩单.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\ExperimentalResults\21级12班《数据结构与算法》第2次实验课_成绩单.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\ExperimentalResults\21级12班《数据结构与算法》第3次实验课_成绩单.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\ExperimentalResults\21级12班《数据结构与算法》第4次实验课_成绩单.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\ExperimentalResults\21级12班《数据结构与算法》第5次实验课_成绩单.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\ExperimentalResults\21级12班《数据结构与算法》第6次实验课_成绩单.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\FinalGrade\2021级软件工程专业《数据结构与算法》期末考试-成绩单.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\TestEveryMonday\成绩单_2021级每周一测第1次.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\TestEveryMonday\成绩单_2021级每周一测第2次.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\TestEveryMonday\成绩单_2021级每周一测第3次.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\VideoProgress\数据结构与算法视频学习数据统计.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
