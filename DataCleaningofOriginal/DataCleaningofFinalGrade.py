@@ -10,6 +10,23 @@ save_src_path = "../cleanedData"
 # 转化为CSV文件保存的新目录
 save_csv_path = "../csv_cleanedata"
 
+def cleanRedundantData(path):
+    # 明确要处理的文件
+    print(path)
+    # 打开文件
+    file = pd.read_csv(path)
+    print("已经打开文件")
+    print(file)
+    print(file.shape)
+    indexID = file[(file['学号/邮箱、电话'] <= 202100000000)].index
+    file.drop(indexID, inplace=True)
+    print("---------------------")
+    print(file)
+    info = pd.DataFrame(file)
+    csv_data = info.to_csv(path)
+    print("冗余数据清除完毕")
+
+
 def ToHundred(save_csv_path,save_path,FinalGrade_name_csv):
     path = save_csv_path + save_path + FinalGrade_name_csv
     print(path)
@@ -97,7 +114,8 @@ def ToHundred(save_csv_path,save_path,FinalGrade_name_csv):
         li = li + 1
     f.close()
     print("数据修改完毕")
-
+    # 将其中学号复杂之人的数据进行清除，以便统一相关数据
+    cleanRedundantData(path)
 
 def xlsxTocsv(save_src_path,save_path,FinalGrade_name,save_csv_path,FinalGrade_name_csv):
     # 文件所处的原目录完整路径

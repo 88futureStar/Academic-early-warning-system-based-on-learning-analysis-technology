@@ -17,6 +17,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\csv_cleanedata\ExperimentalCheck\21级12班《数据结构与算法》第3次实验课_查重结果.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\csv_cleanedata\ExperimentalCheck\21级12班《数据结构与算法》第6次实验课_查重结果.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\csv_cleanedata\ExperimentalResults\21级12班《数据结构与算法》第1次实验课_成绩单.csv">
           <value>
             <Attribute>

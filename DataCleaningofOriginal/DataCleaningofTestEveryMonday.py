@@ -10,6 +10,22 @@ src_path = "../data"
 save_src_path = "../cleanedData"
 save_csv_path = "../csv_cleanedata"
 
+def cleanRedundantData(new_wholePath):
+    # 明确要处理的文件
+    print(new_wholePath)
+    # 打开文件
+    file = pd.read_csv(new_wholePath)
+    print("已经打开文件")
+    print(file)
+    print(file.shape)
+    indexID = file[(file['学号/邮箱、电话'] <= 202100000000)].index
+    file.drop(indexID, inplace=True)
+    print("---------------------")
+    print(file)
+    info = pd.DataFrame(file)
+    csv_data = info.to_csv(new_wholePath)
+    print("冗余数据清除完毕")
+
 def xlsxTocsv(save_src_path,save_path,TestEveryMonday_name,save_csv_path,TestEveryMonday_name_csv):
     # 文件所处的原目录完整路径
     allPath = save_src_path + save_path + TestEveryMonday_name
@@ -29,7 +45,7 @@ def xlsxTocsv(save_src_path,save_path,TestEveryMonday_name,save_csv_path,TestEve
     #     for line in csv_data:
     #         writer.writerow(line)
 
-    with open(new_wholePath, "w", encoding="utf-8-sig") as f:
+    with open(new_wholePath, "w", encoding="utf-8-sig",newline='') as f:
         write = csv.writer(f)
         data = []
         for i in range(3, sheet.max_row + 1):
@@ -44,8 +60,10 @@ def xlsxTocsv(save_src_path,save_path,TestEveryMonday_name,save_csv_path,TestEve
     #         if line.strip():
     #             print(line)
 
-    pd_reader = pd.read_csv(new_wholePath)
-    print(pd_reader)
+    # pd_reader = pd.read_csv(new_wholePath)
+    # print(pd_reader)
+    cleanRedundantData(new_wholePath)
+
 
 def openFile(src_path,TestEveryMonday_path,TestEveryMonday_name,save_src_path,save_path,TestEveryMonday_name_csv):
     # 获取查重文件的完整路径
